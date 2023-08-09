@@ -1,0 +1,61 @@
+
+
+entity Classifiers {
+	/**
+	* The firstname attribute.
+	*/
+	name String
+	
+}
+
+entity ActionLog {
+	/**
+	* The firstname attribute.
+	*/
+	name String
+	
+}
+
+
+entity EndPoints {
+	title String
+    url String 
+	
+}
+
+entity Chips {
+	name String
+	
+}
+
+entity Spliters {
+	name String
+	
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	EndPoints to Spliters{endpoint}  
+    EndPoints to ActionLog{endpoint}  
+
+}
+
+relationship OneToOne {
+	EndPoints to Classifiers{endpoint}  
+    EndPoints to Chips{endpoint}  
+}
+
+
+// Set pagination options
+paginate * with infinite-scroll
+
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
