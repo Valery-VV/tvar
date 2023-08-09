@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "experiment",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "classType",
+      "fieldType": "Classificators",
+      "fieldValues": "DBSCAN,Hierarhical_clustering,Logistic_Regression"
+    }
+  ],
+  "name": "Experiment",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "file",
+      "relationshipName": "file",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "kukumbers",
+      "relationshipName": "user",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

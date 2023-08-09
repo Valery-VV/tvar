@@ -1,0 +1,29 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "kukumbers",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Kukumbers",
+  "relationships": [
+    {
+      "otherEntityName": "file",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "file",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "experiment",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "experiment",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "file",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "The firstname attribute."
+    }
+  ],
+  "name": "File",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "experiment",
+      "otherEntityRelationshipName": "file",
+      "relationshipName": "experiment",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "kukumbers",
+      "relationshipName": "user",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
