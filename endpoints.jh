@@ -1,0 +1,49 @@
+
+
+entity File {
+	/**
+	* The firstname attribute.
+	*/
+	name String
+	
+}
+
+enum Classificators
+{
+   DBSCAN,
+   Hierarhical_clustering,
+   Logistic_Regression
+}
+entity Experiment {
+	title String
+    classType Classificators 
+	
+}
+
+entity Kukumbers {
+	name String
+	
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	File to Experiment{file}
+    Kukumbers to File{user}
+    Kukumbers to Experiment{user}
+
+}
+
+
+// Set pagination options
+paginate File, Experiment with infinite-scroll
+
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
